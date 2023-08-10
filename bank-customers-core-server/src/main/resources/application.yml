@@ -1,0 +1,17 @@
+
+
+spring.application.name: bank-customers-service
+
+management:
+  metrics:
+    enable:
+      all: false
+      http.server.requests: true
+      system.cpu.count: true
+      executor: true
+      httpcomponents: true
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: loggers, info, health, metrics
