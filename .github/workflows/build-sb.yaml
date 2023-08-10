@@ -12,10 +12,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: maven
       - name: Build with Maven
         run: mvn clean package -DskipTests
-      - run: mkdir staging && cp bank-customers-core-server/target/*.jar staging
+      - run: mkdir product && cp bank-customers-core-server/target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
           name: Package
-          path: staging
+          path: product
